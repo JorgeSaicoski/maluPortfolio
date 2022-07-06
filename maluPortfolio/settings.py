@@ -25,7 +25,9 @@ SECRET_KEY = '8hz)-a^_yv1k7vndzp$z01vtbodtxbgr5%1r_w3bhld#09(ni^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    #"137.184.138.82"
+]
 
 
 # Application definition
@@ -133,3 +135,4 @@ INTERNAL_IPS = [
 
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '/images/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
