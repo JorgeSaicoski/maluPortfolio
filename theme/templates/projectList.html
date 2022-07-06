@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static tailwind_tags %}
+{% block slide %}
+	<div  class=" mt-10 w-full h-[85vh] overflow-hidden flex md:flex-row flex-col">
+		<a href="#projects" class="h-full w-full md:w-1/2 self-center overflow-hidden self-center rounded-md flex flex-row items-center justify-around">
+			<img src="https://am3pap002files.storage.live.com/y4m7EMn4CVx7cyEwMlKcMILEfza1l3TiJmz7DdgBEq6JVJYbPf9xGOwOUfsAFi9jyUpoZyE60-Xx91nM6NufMWOuDdzqaZtvqbX9I14EVf9Sl_A2TYmJdHfv6p67ZqrdXtu6vLlUuPRx3tC0zROkg_GLPPVbMN2nqYNffz9bkYOgK8AD70c_9m5WricPF34IfsMPsPqHXI8K6qo5RDREVIgVw/pra%C3%A7a%20de%20cima_Photo%20-%204.jpg?psid=1&width=1552&height=873" style="border-radius: 9999px !important; height:300px !important; width:300px !important">
+			<div class="w-1/2">
+				<h1 class="text-2xl text-center">Malu Scharlau</h1>
+				<h2 class="text-4xl text-center">Arquiteta, urbanista e paisagista </h2>
+				<p class="mt-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</a>
+		<div class="relative h-full w-full md:w-1/2 self-center overflow-hidden self-center rounded-md cursor-pointer z-50" id="slidesShow">
+			<div class="absolute top-0 left-0 w-full h-full duration-150" id="image1">
+				<img src="https://am3pap002files.storage.live.com/y4mGx1Rk1yT-b7M6zOtrWN76EAT9pZApBeO1Zmjgg0pAAr817CB_xYpGD0865dOMspgtix3bt4aq3oEcbb9roh_ylDXV_dSm6nyvXfpCFHBQoMX--AyRWXjM72GgqjCFaaL-ONpPD3cXkekuANURciX9FbPwMjVzzT0SrMIRlgD_lChYWmoEMT8pCfYK-3LTMzYBeTMo4tDckWEB0kh4dbp6A/Unidades%20de%20Paisagem.png?psid=1&width=1375&height=790" class="h-full w-full">
+			</div>
+			<div class="absolute top-72 left-72 w-0 h-0 duration-150" id="image2">
+				<img src="https://am3pap002files.storage.live.com/y4m7EMn4CVx7cyEwMlKcMILEfza1l3TiJmz7DdgBEq6JVJYbPf9xGOwOUfsAFi9jyUpoZyE60-Xx91nM6NufMWOuDdzqaZtvqbX9I14EVf9Sl_A2TYmJdHfv6p67ZqrdXtu6vLlUuPRx3tC0zROkg_GLPPVbMN2nqYNffz9bkYOgK8AD70c_9m5WricPF34IfsMPsPqHXI8K6qo5RDREVIgVw/pra%C3%A7a%20de%20cima_Photo%20-%204.jpg?psid=1&width=1552&height=873" class="h-full w-full">
+			</div>
+			<div class="absolute top-72 left-72 w-0 h-0 duration-150" id="image3">
+				<img src="https://dub01pap002files.storage.live.com/y4mYRKtCau2fnhYhqsHjQqauSj_wnTJKaIljGscGIevEfx52sY0HFl2mFtSxypTxGFdwOaYk0eJycPPoM6lW8vBOihYqY8uVwwkfEZi1Xhb4Yhd6XVqAK1jdMJ4U5Z2WGenzyaD_yLZQFyZt8haJYEfUHqm8GCmqFbExEQWp04PLnr4q64C1lCwX5PlaRvvZ0IestmkG2XyxxJWT9_QehX1NQ/04%20editada.jpg?psid=1&width=1552&height=873" class="h-full w-full">
+			</div>
+		</div>
+
+	</div>
+{% endblock %}
+{% block content %}
+	<section id="projects">
+	{% for category in categories %}
+	    <div class="bg-headerColor flex justify-center p-10 mt-10">
+		    <h2 class="text-base sm:text-4xl font-bold tracking-[.5em] hover:scale-150 transition-all ease-in duration-300 fontIBM ">{{category.name}}</h2>
+		</div>
+		<div class="sm:h-[40vh] flex flex-row ml-3 mr-3 overflow-x-scroll snap-x snap-mandatory">
+			{% for project in projects %}
+				{% if project.category == category %}
+					<a href="/projetos/{{ project.name }}/" class="sm:w-auto group rounded-lg overflow-hidden relative m-10 min-w-[500px] sm:w-[600px]">
+			            <img src="{{project.image.url}}" class="group-hover:scale-125 ease-in duration-200">
+			            <div class="absolute top-0 left-0 w-full h-full">
+			            	<div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
+				                <p class="opacity-0 group-hover:opacity-100 text-2xl">{{project.name}}</p>
+				            </div>
+			            	<div class="absolute bg-headerColor opacity-0 group-hover:opacity-50 ease-out duration-30 w-full h-full"></div>
+			        	</div>
+			        </a>
+				{% endif %}
+			{% endfor %}
+		</div>
+		
+	{% endfor %}
+	</section>
+	<script src="{% static 'js/scripts.js' %}"></script>
+{% endblock %}
