@@ -34,7 +34,7 @@
 		
 			<nav class="ease-in duration-500 bg-headerColor md:bg-bodyColor text-center md:border-0 border-t-8 border-double border-textColor w-full md:w-2/3 md:text-2xl flex md:flex-row flex-col justify-around fontMoon md:h-auto h-0" id="itemNavFlex">
 				<a href="{% url 'home' %}">Início</a>
-				<a href="% url 'home' %}">Sobre</a>
+				<a href="{% url 'home' %}">Sobre</a>
 				<a href="{% url 'home' %}#projects">Portfólio</a>
 				<a href="">Currículo</a>
 				<a href="{% url 'contact' %}">Contato</a>	
@@ -42,7 +42,7 @@
 		</header>
 		{% block content %}
 		{% endblock %}
-		
+		<script src="{% static 'js/scripts.js' %}"></script>
 	</body>
 
 </html>
