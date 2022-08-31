@@ -26,7 +26,9 @@ SECRET_KEY = '8hz)-a^_yv1k7vndzp$z01vtbodtxbgr5%1r_w3bhld#09(ni^'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    #"137.184.138.82"
+    "206.189.237.24",
+    "malu.jorgeadriano.info",
+    '127.0.0.1'
 ]
 
 
@@ -134,5 +136,5 @@ INTERNAL_IPS = [
 ]
 
 MEDIA_URL = '/images/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '/images/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images/')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')

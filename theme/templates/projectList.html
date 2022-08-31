@@ -37,7 +37,7 @@
 		</div>
 		<div class="sm:h-[40vh] flex flex-row ml-3 mr-3 overflow-x-scroll snap-x snap-mandatory">
 			{% for project in projects %}
-				{% if project.category == category %}
+				{% if project.category == category and project.image %}
 					<a href="/projetos/{{ project.name }}/" class="sm:w-auto group rounded-lg overflow-hidden relative m-10 min-w-[500px] sm:w-[600px]">
 			            <img src="{{project.image.url}}" class="group-hover:scale-125 ease-in duration-200">
 			            <div class="absolute top-0 left-0 w-full h-full">
