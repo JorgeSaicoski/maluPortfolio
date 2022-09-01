@@ -15,17 +15,6 @@
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			</div>
 		</a>
-		<div class="relative h-full w-full md:w-1/2 self-center overflow-hidden self-center rounded-md cursor-pointer z-50" id="slidesShow">
-			<div class="absolute top-0 left-0 w-full h-full duration-150" id="image1">
-				<img src="https://am3pap002files.storage.live.com/y4mGx1Rk1yT-b7M6zOtrWN76EAT9pZApBeO1Zmjgg0pAAr817CB_xYpGD0865dOMspgtix3bt4aq3oEcbb9roh_ylDXV_dSm6nyvXfpCFHBQoMX--AyRWXjM72GgqjCFaaL-ONpPD3cXkekuANURciX9FbPwMjVzzT0SrMIRlgD_lChYWmoEMT8pCfYK-3LTMzYBeTMo4tDckWEB0kh4dbp6A/Unidades%20de%20Paisagem.png?psid=1&width=1375&height=790" class="h-full w-full">
-			</div>
-			<div class="absolute top-72 left-72 w-0 h-0 duration-150" id="image2">
-				<img src="https://am3pap002files.storage.live.com/y4m7EMn4CVx7cyEwMlKcMILEfza1l3TiJmz7DdgBEq6JVJYbPf9xGOwOUfsAFi9jyUpoZyE60-Xx91nM6NufMWOuDdzqaZtvqbX9I14EVf9Sl_A2TYmJdHfv6p67ZqrdXtu6vLlUuPRx3tC0zROkg_GLPPVbMN2nqYNffz9bkYOgK8AD70c_9m5WricPF34IfsMPsPqHXI8K6qo5RDREVIgVw/pra%C3%A7a%20de%20cima_Photo%20-%204.jpg?psid=1&width=1552&height=873" class="h-full w-full">
-			</div>
-			<div class="absolute top-72 left-72 w-0 h-0 duration-150" id="image3">
-				<img src="https://dub01pap002files.storage.live.com/y4mYRKtCau2fnhYhqsHjQqauSj_wnTJKaIljGscGIevEfx52sY0HFl2mFtSxypTxGFdwOaYk0eJycPPoM6lW8vBOihYqY8uVwwkfEZi1Xhb4Yhd6XVqAK1jdMJ4U5Z2WGenzyaD_yLZQFyZt8haJYEfUHqm8GCmqFbExEQWp04PLnr4q64C1lCwX5PlaRvvZ0IestmkG2XyxxJWT9_QehX1NQ/04%20editada.jpg?psid=1&width=1552&height=873" class="h-full w-full">
-			</div>
-		</div>
 
 	</div>
 {% endblock %}
@@ -35,7 +24,7 @@
 	    <div class="bg-headerColor flex justify-center p-10 mt-10">
 		    <h2 class="text-base sm:text-4xl font-bold tracking-[.5em] hover:scale-150 transition-all ease-in duration-300 fontIBM ">{{category.name}}</h2>
 		</div>
-		<div class="sm:h-[40vh] flex flex-row ml-3 mr-3 overflow-x-scroll snap-x snap-mandatory">
+		<div class="flex flex-row ml-3 mr-3 overflow-x-scroll snap-x snap-mandatory">
 			{% for project in projects %}
 				{% if project.category == category and project.image %}
 					<a href="/projetos/{{ project.name }}/" class="sm:w-auto group rounded-lg overflow-hidden relative m-10 min-w-[500px] sm:w-[600px]">
